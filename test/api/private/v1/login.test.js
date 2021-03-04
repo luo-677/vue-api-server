@@ -21,12 +21,14 @@ describe(url+" login api testing",function(){
 	it("test to login => username is null",function(done){
 		common.login(null,config.password,function(err,res){
 			chai.assert.equal(res.body.meta.status,400,res.body.meta.msg);
+			// console.log(res.body.meta.msg);
 			done();
 		});
 	});
 	it("test to login => password is null",function(done){
 		common.login(config.username,null,function(err,res){
 			chai.assert.equal(res.body.meta.status,400,res.body.meta.msg);
+			// console.log(res.body.meta.msg);
 			done();
 		});
 	});
